@@ -2,6 +2,7 @@ pipeline {
     agent any
     parameters {
         booleanParam(name: 'RC', defaultValue: false, description: 'Is this a Release Candidate?')
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
     environment {
        DEMO='1.3'
@@ -21,6 +22,7 @@ pipeline {
         stage('Example') {
             steps {
                 echo "${params.RC} World!"
+                echo "${params.Greeting} World!"
             }
         }
         stage('Build') {
