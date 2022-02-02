@@ -8,6 +8,15 @@ pipeline {
    }
 
     stages {
+        stage('Audit tools') {                        
+            steps {
+                sh '''
+                  pwd
+                  git version
+                  docker version
+                '''
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
