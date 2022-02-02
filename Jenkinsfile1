@@ -3,6 +3,8 @@ pipeline {
 
     environment {
        DEMO='1.3'
+       RELEASE='20.04'
+       LOG_LEVEL='INFO'
    }
 
     stages {
@@ -25,6 +27,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                echo "Testing. I can see release ${RELEASE}, but not log level ${LOG_LEVEL}"
             }
         }
     }
