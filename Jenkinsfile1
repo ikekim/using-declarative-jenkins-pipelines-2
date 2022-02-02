@@ -18,6 +18,11 @@ pipeline {
                 '''
             }
         }
+        stage('Example') {
+            steps {
+                echo "${params.RC} World!"
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
