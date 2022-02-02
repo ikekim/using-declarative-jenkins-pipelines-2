@@ -13,7 +13,6 @@ pipeline {
                 sh '''
                   pwd
                   git version
-                  docker version
                 '''
             }
         }
