@@ -3,6 +3,13 @@ library identifier: 'jenkins-pipeline-demo-library-2@main',
 
 pipeline {
     agent any
+    parameters {
+        booleanParam(name: 'RC', defaultValue: false, description: 'Is this a Release Candidate?')
+    }
+    environment {
+        VERSION = "0.1.0"        
+        VERSION_RC = "rc.2"
+    }
     stages {
         stage('Audit tools') {                        
             steps {
