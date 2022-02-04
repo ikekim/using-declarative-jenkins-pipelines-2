@@ -7,7 +7,7 @@ pipeline {
         stage('Get Project') {                        
             steps {
                 script {
-                    readConfigFileProperties.getConfigFileProperties('vars.yml')
+                    readConfigFileProperties.getConfigFileProperties('vars.yaml')
                 }
             }
         }
