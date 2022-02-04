@@ -6,8 +6,8 @@ pipeline {
     }
     environment {
        DEMO='1.3'
-       RELEASE='20.04'
-       LOG_LEVEL='INFO'
+        VERSION = "0.1.0"        
+        VERSION_RC = "rc.2"
    }
 
     stages {
