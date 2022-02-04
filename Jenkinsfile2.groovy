@@ -38,7 +38,7 @@ pipeline {
             }
             steps {
               echo "Building version: ${VERSION} with suffix: ${VERSION_SUFFIX}"
-              sh 'dotnet build -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_SUFFIX}" ./m3/src/Pi.Web/Pi.Web.csproj'
+              // sh 'dotnet build -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_SUFFIX}" ./m3/src/Pi.Web/Pi.Web.csproj'
             }
         }
         stage('stage-1') {
