@@ -1,3 +1,5 @@
+
+// test to see if pipeline passes the $DEMO env variable value to the script ./test.sh
 pipeline {
     agent any
     parameters {
