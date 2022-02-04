@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage('Get Project') {                        
             steps {
-                bqTableNamesVars('vars.yaml')
+                scripts{
+                    bqTableNamesVars('vars.yaml')
+                }
             }
         }
     }
