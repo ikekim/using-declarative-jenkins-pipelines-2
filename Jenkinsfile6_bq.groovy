@@ -10,8 +10,8 @@ pipeline {
         booleanParam(name: 'RC', defaultValue: false, description: 'Is this a Release Candidate?')
     }
     environment {
-        VERSION = "0.1.0"        
-        VERSION_RC = "rc.2"
+        TABLE1 = "bq_table1"        
+        TABLE2 = "bq_table2"
     }
     stages {
         stage('Audit tools') {                        
@@ -21,11 +21,10 @@ pipeline {
         }
         stage('Build') {
             environment {
-                VERSION_SUFFIX = getVersionSuffix rcNumber: env.VERSION_RC, isReleaseCandidate: params.RC
+                TABLES = bqTableNames table1: env.TABLE1, table2: env.TABLE2
             }
             steps {
-              echo "Building version: ${VERSION} with suffix: ${VERSION_SUFFIX}"
-              // sh 'dotnet build -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_SUFFIX}" ./m3/src/Pi.Web/Pi.Web.csproj'
+              echo "migrating tables: ${TABLES}"
             }
         }
     }
