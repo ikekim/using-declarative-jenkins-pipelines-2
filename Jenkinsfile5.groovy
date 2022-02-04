@@ -1,4 +1,5 @@
-library identifier: 'jenkins-pipeline-demo-library@master', 
+// library identifier: 'jenkins-pipeline-demo-library@master',
+library identifier: 'jenkins-pipeline-demo-library-2@main',
         // retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/sixeyed/jenkins-pipeline-demo-library.git'])
         retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/ikekim/jenkins-pipeline-demo-library-2.git'])
 
