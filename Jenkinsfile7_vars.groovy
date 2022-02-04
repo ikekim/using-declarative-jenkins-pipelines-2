@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Get Project') {                        
             steps {
-                bqTableNamesVars(vars.yml)
+                bqTableNamesVars.generateTables(vars.yml)
             }
         }
     }
